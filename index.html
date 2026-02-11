@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-do List</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <h1>Minhas tarefas</h1>
+      <p>Clique na tarefa para concluir.</p>
+    </header>
+
+    <section class="card">
+      <form id="form" class="input-area" autocomplete="off">
+        <input id="taskInput" type="text" placeholder="Digite uma tarefa..." />
+        <button class="btn btn-add" type="submit">Adicionar</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist" aria-label="Filtros">
+          <button class="chip is-active" data-filter="all" type="button">Todas</button>
+          <button class="chip" data-filter="open" type="button">A fazer</button>
+          <button class="chip" data-filter="done" type="button">Concluídas</button>
+        </div>
+
+        <div class="actions">
+          <span id="counter" class="counter">0</span>
+          <button id="clearDone" class="btn btn-ghost" type="button">Limpar concluídas</button>
+          <button id="clearAll" class="btn btn-danger" type="button">Apagar tudo</button>
+        </div>
+      </div>
+
+      <ul id="taskList" class="list" aria-live="polite"></ul>
+      <p id="emptyState" class="empty">Nenhuma tarefa ainda. Adicione a primeira 👆</p>
+    </section>
+
+    <footer class="footer">
+      <small>Salvo automaticamente (LocalStorage).</small>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
